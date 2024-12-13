@@ -32,7 +32,7 @@ public class HelloController {
         myInput.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String oldVal, String newVal) {
-                /*if (!newVal.matches("-?(0|[1-9]\\d*)")) {
+                /*if (!newVal.matches("(0|[1-9]\\d{3})")) {
                     //inputLeft.setText(inputLeft.getText().substring(0,inputLeft.getLength()-1));
                     input.setText(newVal.replaceAll("[^\\d]", ""));
                 }*/
@@ -78,9 +78,7 @@ public class HelloController {
         long days = lnow.until(dateTime, ChronoUnit.DAYS);
         long hours = lnow.until(dateTime, ChronoUnit.HOURS);
         long minutes = lnow.until(dateTime, ChronoUnit.MINUTES);
-        ;
         long seconds = lnow.until(dateTime, ChronoUnit.SECONDS);
-        ;
         return String.format("%02d.%02d.%02d. %02d:%02d:%02d", years, months, days, hours, minutes, seconds);
     }
 }
